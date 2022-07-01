@@ -3,12 +3,15 @@ import Films from '../components/Films'
 
 const StudioGhibliContainer = () => {
     const [ghiblies, setGhiblies] = useState([])
-    const [currentGhibli, setCurrentGhibli] = useState(null)
+    const [currentGhibli, setSelectedGhibli] = useState(null)
 
     useEffect(() => {
         getGhiblies();
     }, [])
 
+    const onGhibliClick = function (ghibli) {
+        setSelectedGhibli(ghibli)
+    }
 
     const getGhiblies = function () {
         fetch('https://ghibliapi.herokuapp.com/films')
@@ -19,7 +22,7 @@ const StudioGhibliContainer = () => {
     return (
         <>
             <h1>Studio Ghibli Filmography</h1>
-            <Films ghiblies={ghiblies} />
+            <Films ghiblies={ghiblies} onGhibliClick={onGhibliClick} currentGhibli={currentGhibli} />
         </>
     )
 }

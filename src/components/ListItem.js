@@ -1,8 +1,13 @@
 import React from 'react'
 
-const ListItem = ({ ghibli }) => {
+const ListItem = ({ ghibli, onGhibliClick }) => {
+
+    const handleClick = function () {
+        onGhibliClick(ghibli)
+    }
+
     return (
-        <li><b>{ghibli.title}</b> {ghibli.release_date}</li>
+        <li onClick={handleClick}><b>{ghibli.title}</b> {ghibli.release_date}</li>
     )
 }
 

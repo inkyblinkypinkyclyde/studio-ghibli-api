@@ -1,12 +1,14 @@
 import React from 'react'
 import AllFilms from './Allfilms'
+import CurrentFilm from './CurrentFilm'
 
 
-const Films = ({ ghiblies }) => {
+const Films = ({ ghiblies, onGhibliClick, currentGhibli }) => {
     return (
         <>
-            <h1>I'm some films</h1>
-            <AllFilms ghiblies={ghiblies} />
+            <h3>All films</h3>
+            <AllFilms ghiblies={ghiblies} onGhibliClick={onGhibliClick} />
+            {currentGhibli ? <CurrentFilm currentGhibli={currentGhibli} /> : null}
         </>
     )
 }

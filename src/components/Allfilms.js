@@ -1,10 +1,10 @@
 import React from 'react'
 import ListItem from './ListItem'
 
-const AllFilms = ({ ghiblies }) => {
+const AllFilms = ({ ghiblies, onGhibliClick }) => {
 
-    const ghibliesItems = ghiblies.map((ghibli, index) => {
-        return <ListItem ghibli={ghibli} key={index} />
+    const ghibliesItems = ghiblies.map((ghibli) => {
+        return <ListItem ghibli={ghibli} key={ghibli.id} onGhibliClick={onGhibliClick} />
     })
     return (
         <>
