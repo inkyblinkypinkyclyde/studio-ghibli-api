@@ -8,6 +8,9 @@ const Inputs = ({ onGhibliSet }) => {
 
     return (
         <form>
+            <p>
+                Enter a number to return all Ghiblies over a given Tomato rating
+            </p>
             <input onChange={onChange} type='number' defaultValue='0' />
         </form>
     )
